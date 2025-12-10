@@ -6,18 +6,18 @@ import { CUSTOMER_ORDERS_PATH, rootLink } from '../../scripts/commerce.js';
 
 export default async function decorate(block) {
   // Wait for 3 seconds to allow personalization data to load
-  //console.log('Waiting 3 seconds for personalization data to load...');
-  
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  
+  // console.log('Waiting 3 seconds for personalization data to load...');
+
+  await new Promise((resolve) => { setTimeout(resolve, 3000); });
+
   const fragment = await loadFragment('/customer/sidebar-fragment');
-  
+
   const sidebarItemsConfig = fragment.querySelectorAll('.default-content-wrapper > ol > li');
   const personalizationData = getPersonalizationData();
   const customerGroups = personalizationData?.groups || [];
-  
-  //console.log(customerGroups);
-  
+
+  // console.log(customerGroups);
+
   const sidebarItems = Array.from(sidebarItemsConfig).map((item) => {
     const itemParams = Array.from(item.querySelectorAll('ol > li'));
     const itemConfig = {
@@ -26,7 +26,6 @@ export default async function decorate(block) {
       itemSubtitle: itemParams[0]?.innerText || '',
       itemIcon: itemParams[1]?.innerText || 'Placeholder',
     };
-    
     if(customerGroups && customerGroups[0] !== 'NA==') { 
       if(itemConfig.itemLink === '/customer/quotes' || itemConfig.itemLink === '/customer/requisition-list' || itemConfig.itemLink === '/customer/purchase-orders') { 
         console.log('skipping');
