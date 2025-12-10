@@ -14,7 +14,9 @@ export default async function decorate(block) {
   const sidebarItemsConfig = fragment.querySelectorAll('.default-content-wrapper > ol > li');
   const personalizationData = getPersonalizationData();
   const customerGroups = personalizationData?.groups || [];
-  console.log(customerGroups);
+  
+  //console.log(customerGroups);
+  
   const sidebarItems = Array.from(sidebarItemsConfig).map((item) => {
     const itemParams = Array.from(item.querySelectorAll('ol > li'));
     const itemConfig = {
@@ -23,8 +25,9 @@ export default async function decorate(block) {
       itemSubtitle: itemParams[0]?.innerText || '',
       itemIcon: itemParams[1]?.innerText || 'Placeholder',
     };
-    if(customerGroups && customerGroups[0] !== 'NA==') {
-      if(itemConfig.itemLink === "/customer/quotes" || itemConfig.itemLink === '/customer/requisition-list' || itemConfig.itemLink === '/customer/purchase-orders') {
+    
+    if(customerGroups && customerGroups[0] !== 'NA==') { 
+      if(itemConfig.itemLink === '/customer/quotes' || itemConfig.itemLink === '/customer/requisition-list' || itemConfig.itemLink === '/customer/purchase-orders') { 
         console.log('skipping');
         const menuItemEl = document.createElement('a');
         return menuItemEl;
