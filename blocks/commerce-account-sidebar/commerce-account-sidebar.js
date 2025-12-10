@@ -24,12 +24,13 @@ export default async function decorate(block) {
       itemIcon: itemParams[1]?.innerText || 'Placeholder',
     };
     if(customerGroups && customerGroups[0] !== 'NA==') {
-    if(itemConfig.itemLink === "/customer/quotes" || itemConfig.itemLink === '/customer/requisition-list' || itemConfig.itemLink === '/customer/purchase-orders') {
-      console.log('skipping');
-      const menuItemEl = document.createElement('a');
-      return menuItemEl;
+      if(itemConfig.itemLink === "/customer/quotes" || itemConfig.itemLink === '/customer/requisition-list' || itemConfig.itemLink === '/customer/purchase-orders') {
+        console.log('skipping');
+        const menuItemEl = document.createElement('a');
+        return menuItemEl;
+      }
     }
-  }
+    
     const menuItemEl = document.createElement('a');
     menuItemEl.classList.add('commerce-account-sidebar-item');
     menuItemEl.href = rootLink(itemConfig.itemLink);
