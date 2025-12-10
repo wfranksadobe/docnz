@@ -1,12 +1,13 @@
 import { Icon, provider as UI } from '@dropins/tools/components.js';
 import { render as accountRenderer } from '@dropins/storefront-account/render.js';
+import { getPersonalizationData } from '@dropins/storefront-personalization/api.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { CUSTOMER_ORDERS_PATH, rootLink } from '../../scripts/commerce.js';
-import { getPersonalizationData } from '@dropins/storefront-personalization/api.js';
 
 export default async function decorate(block) {
   // Wait for 3 seconds to allow personalization data to load
-  console.log('Waiting 3 seconds for personalization data to load...');
+  //console.log('Waiting 3 seconds for personalization data to load...');
+  
   await new Promise(resolve => setTimeout(resolve, 3000));
   
   const fragment = await loadFragment('/customer/sidebar-fragment');
