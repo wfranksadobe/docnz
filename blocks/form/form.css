@@ -5,7 +5,7 @@
     --surface-color: #ffffff;
     --border-color: #e2e8f0;
     --border-color-hover: #cbd5e1;
-    --border-color-focus: rgb(235, 10, 30);
+    --border-color-focus: #ffc51d;
     --text-color-primary: #1e293b;
     --text-color-secondary: #64748b;
     --text-color-muted: #94a3b8;
@@ -52,7 +52,7 @@
     
     /* Focus & Validation States - Updated with Toyota Red */
     --form-invalid-border-color: var(--form-error-color);
-    --form-focus-ring-color: rgba(235, 10, 30, 0.1);
+    --form-focus-ring-color: rgba(255, 197, 29, 0.2);
     --form-focus-ring-width: 0.25rem;
     
     /* Label Styling - Increased Font Size */
@@ -356,7 +356,7 @@ main .form input[type='radio'] {
     margin: 0;
     position: static;
     z-index: 1;
-    accent-color: rgb(235, 10, 30);
+    accent-color: #ffc51d;
     cursor: pointer;
     margin-top: 0.125rem;
 }
@@ -527,7 +527,7 @@ main .form .checkbox-wrapper label {
 
 main .form .radio-wrapper label:hover,
 main .form .checkbox-wrapper label:hover {
-    color: rgb(235, 10, 30);
+    color: #ffc51d;
 }
 
 main .form fieldset.link .checkbox-wrapper label {
@@ -1476,7 +1476,7 @@ main .form input:focus-visible,
 main .form textarea:focus-visible,
 main .form select:focus-visible,
 main .form button:focus-visible {
-    outline: 2px solid rgb(235, 10, 30);
+    outline: 2px solid #ffc51d;
     outline-offset: 2px;
 }
 

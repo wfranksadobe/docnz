@@ -198,6 +198,7 @@ header {
 
 main {
   grid-row: 2;
+  background-color: #F5F4F2;
 }
 
 footer {
