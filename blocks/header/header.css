@@ -672,6 +672,40 @@ header .nav-search-input .search_autocomplete .popover-container {
   font: var(--type-body-1-default-font) !important;
   letter-spacing: var(--type-body-1-default-letter-spacing) !important;
   width: 100%;
+  color: #000;
+}
+
+/* Fix icon visibility in login form */
+.dropdown-wrapper.nav-tools-wrapper .nav-auth-menu-panel svg {
+  color: #000;
+}
+
+/* Add email icon to email field in login form */
+.dropdown-wrapper.nav-tools-wrapper .nav-auth-menu-panel .auth-sign-in-form__form__field--email .dropin-input-container {
+  position: relative;
+}
+
+.dropdown-wrapper.nav-tools-wrapper .nav-auth-menu-panel .auth-sign-in-form__form__field--email .dropin-input {
+  padding-left: 36px;
+}
+
+.dropdown-wrapper.nav-tools-wrapper .nav-auth-menu-panel .auth-sign-in-form__form__field--email .dropin-input__label--floating {
+  left: 34px;
+}
+
+.dropdown-wrapper.nav-tools-wrapper .nav-auth-menu-panel .auth-sign-in-form__form__field--email .dropin-input-container::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'%3E%3C/path%3E%3Cpolyline points='22,6 12,13 2,6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
 }
 
 @media (min-width: 1024px) {
