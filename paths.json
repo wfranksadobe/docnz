@@ -19,6 +19,7 @@
   "includes": [
     "/content/docnz/",
     "/content/forms/af/",
+    "/content/forms/af/docnz/",
     "/content/dam/",
     "/adobe/forms/af/",
     "/adobe/assets/"
