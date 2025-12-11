@@ -6,14 +6,39 @@
   --desktop-panel-max-height: 600px;
 }
 
+/* header height adjustment for extra padding */
+header {
+  height: calc(var(--nav-height) + 30px);
+}
+
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #194036;
   width: 100%;
   z-index: 3;
   position: fixed;
   border-bottom: 1px solid var(--color-neutral-300);
   padding: 5px;
+  padding-top: 25px;
+}
+
+header .nav-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: #ffc51d;
+}
+
+header .nav-wrapper,
+header .nav-wrapper a,
+header .nav-wrapper button,
+header .nav-wrapper .cart-text,
+header .nav-wrapper .wishlist-text,
+header .nav-wrapper .search-text {
+  color: #fff;
 }
 
 header nav {
@@ -75,7 +100,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--color-neutral-50);
+  background-color: transparent;
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -182,16 +207,16 @@ header nav[aria-expanded='true'] .nav-sections {
 }
 
 header nav .nav-sections ul {
-  font: var(--type-body-2-strong-font);
-  letter-spacing: var(--type-body-2-strong-letter-spacing);
+  font: var(--type-body-1-default-font);
+  letter-spacing: var(--type-body-1-default-letter-spacing);
   list-style: none;
   padding-left: 0;
 }
 
 header nav .nav-sections ul > li,
 header nav .nav-sections ul > li > a {
-  font: var(--type-body-2-strong-font);
-  letter-spacing: var(--type-body-2-strong-letter-spacing);
+  font: var(--type-body-1-default-font);
+  letter-spacing: var(--type-body-1-default-letter-spacing);
 }
 
 header nav .nav-brand a:hover {
@@ -227,7 +252,7 @@ header nav .nav-sections ul > li:empty {
 
   header nav .nav-sections .default-content-wrapper > ul > li,
   header nav .nav-sections .nav-drop {
-    border-radius: 4px;
+    border-radius: 0;
     padding: 0 var(--spacing-small);
   }
 
@@ -267,9 +292,21 @@ header nav .nav-sections ul > li:empty {
     max-height: var(--desktop-panel-max-height);
     min-height: var(--desktop-panel-min-height);
     padding: var(--spacing-xbig);
+    padding-top: calc(var(--spacing-xbig) + 3px);
     position: absolute;
-    top: var(--spacing-large);
+    top: calc(var(--spacing-large) + 27px);
     width: 100%;
+  }
+
+  /* Bridge to maintain hover between nav item and submenu - matches header color */
+  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] .submenu-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #194036;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li .submenu-header {
@@ -306,10 +343,54 @@ header nav .nav-sections ul > li:empty {
     max-width: var(--desktop-item-panel-max-width);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li:hover,
-  header nav .nav-sections .nav-drop[aria-expanded='true'] {
-    background-color: var(--color-neutral-200);
+  header nav .nav-sections .default-content-wrapper > ul > li:hover {
+    background-color: transparent;
   }
+
+  /* Override global link hover styles for nav items */
+  header nav .nav-sections .default-content-wrapper > ul > li > a:hover,
+  header nav .nav-sections .default-content-wrapper > ul > li a.button:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
+    background-color: transparent;
+  }
+
+  /* Reset button styles for nav buttons */
+  header nav .nav-sections .default-content-wrapper > ul > li a.button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: var(--type-body-1-default-font);
+    letter-spacing: var(--type-body-1-default-letter-spacing);
+    box-shadow: none;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li.nav-drop:hover,
+  header nav .nav-sections .nav-drop[aria-expanded='true'] {
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li.nav-drop:hover > a,
+  header nav .nav-sections .nav-drop[aria-expanded='true'] > a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
+  }
+}
+
+/* Submenu text should be black */
+header nav .nav-sections .submenu-wrapper,
+header nav .nav-sections .submenu-wrapper a,
+header nav .nav-sections .submenu-wrapper li {
+  color: #000;
 }
 
 /* tools */
@@ -318,7 +399,7 @@ header nav .nav-tools-panel {
   position: absolute;
   box-shadow: var(--shape-shadow-2);
   background: var(--background-color);
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + 30px);
   right: 0;
   width: 100%;
   display: none;
@@ -335,7 +416,7 @@ header nav .nav-tools {
   height: 100%;
   gap: var(--spacing-small);
   align-items: center;
-  background: var(--background-color);
+  background: #194036;
   z-index: 3;
 }
 
@@ -364,10 +445,16 @@ header nav .nav-tools button.nav-cart-button {
 }
 
 header nav .nav-tools button.nav-cart-button .cart-text {
-  font: var(--type-body-2-strong-font);
-  letter-spacing: var(--type-body-2-strong-letter-spacing);
-  color: var(--color-brand-700);
+  font: var(--type-body-1-default-font);
+  letter-spacing: var(--type-body-1-default-letter-spacing);
+  color: #fff;
   white-space: nowrap;
+}
+
+header nav .nav-tools button.nav-cart-button:hover .cart-text {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 4px;
 }
 
 header nav .nav-tools button.nav-cart-button[data-count]::after {
@@ -401,10 +488,16 @@ header nav .nav-tools button.nav-wishlist-button {
 }
 
 header nav .nav-tools button.nav-wishlist-button .wishlist-text {
-    font: var(--type-body-2-strong-font);
-    letter-spacing: var(--type-body-2-strong-letter-spacing);
-    color: var(--color-brand-700);
+    font: var(--type-body-1-default-font);
+    letter-spacing: var(--type-body-1-default-letter-spacing);
+    color: #fff;
     white-space: nowrap;
+}
+
+header nav .nav-tools button.nav-wishlist-button:hover .wishlist-text {
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    text-underline-offset: 4px;
 }
 
 @media (max-width: 899px) {
@@ -455,10 +548,16 @@ header nav .nav-tools button.nav-search-button {
 }
 
 header nav .nav-tools button.nav-search-button .search-text {
-  font: var(--type-body-2-strong-font);
-  letter-spacing: var(--type-body-2-strong-letter-spacing);
-  color: var(--color-brand-700);
+  font: var(--type-body-1-default-font);
+  letter-spacing: var(--type-body-1-default-letter-spacing);
+  color: #fff;
   white-space: nowrap;
+}
+
+header nav .nav-tools button.nav-search-button:hover .search-text {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  text-underline-offset: 4px;
 }
 
 header .nav-search-panel {
@@ -508,7 +607,7 @@ header .nav-search-input .search_autocomplete .popover-container {
   }
 
   header nav .nav-tools-panel {
-    top: calc(-12px + var(--nav-height));
+    top: calc(-12px + var(--nav-height) + 30px);
   }
 
   header nav .minicart-panel {
@@ -678,7 +777,7 @@ li
   }
 
   header nav[aria-expanded='true'] .nav-tools {
-    background: var(--background-color);
+    background: #194036;
     bottom: 0;
     height: auto;
     left: 0;
