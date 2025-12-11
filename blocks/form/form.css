@@ -408,9 +408,8 @@ main .form form .wizard > legend {
     margin-bottom: 1.5rem;
 }
 
-/* Modern Checkbox and Radio Group Styling - Fixed Alignment */
-main .form form fieldset.checkbox-group-wrapper,
-main .form form fieldset.radio-group-wrapper {
+/* Modern Checkbox Group Styling - Fixed Alignment */
+main .form form fieldset.checkbox-group-wrapper {
     padding-left: 0;
     margin-left: 0;
     background-color: var(--background-color-secondary);
@@ -420,8 +419,7 @@ main .form form fieldset.radio-group-wrapper {
     border: 1px solid var(--border-color);
 }
 
-main .form form fieldset.checkbox-group-wrapper > legend,
-main .form form fieldset.radio-group-wrapper > legend {
+main .form form fieldset.checkbox-group-wrapper > legend {
     padding: 0.5rem 1.5rem;
     margin-bottom: 0;
     color: #000;
@@ -435,6 +433,34 @@ main .form form fieldset.radio-group-wrapper > legend {
     z-index: 1;
     box-shadow: var(--form-shadow-sm);
     line-height: 1.1;
+}
+
+/* Radio Group Styling - No box, no background */
+main .form form fieldset.radio-group-wrapper {
+    padding: 0;
+    margin-left: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+main .form form fieldset.radio-group-wrapper > legend {
+    position: static;
+    padding: 0;
+    margin-bottom: var(--form-label-margin-bottom);
+    color: var(--form-label-color);
+    font-weight: var(--form-label-font-weight);
+    font-size: var(--form-label-font-size);
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    line-height: 1.4;
+}
+
+main .form form fieldset.radio-group-wrapper > .radio-wrapper {
+    padding: var(--form-input-padding);
 }
 
 /* Enhanced Required Field Styling */
