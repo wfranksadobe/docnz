@@ -212,12 +212,14 @@ main .form form fieldset {
     border: 1px solid var(--border-color);
     box-shadow: var(--form-shadow-sm);
     padding: 1.5rem;
+    padding-top: 3.15rem;
     margin-bottom: 2rem;
     position: relative;
 }
 
 main .form form fieldset fieldset {
     padding: 1rem;
+    padding-top: 3.15rem;
     background-color: var(--background-color-secondary);
     margin-bottom: 1rem;
 }
@@ -367,24 +369,23 @@ main .form textarea {
     padding: 1.25rem 1.5rem;
 }
 
-/* Modern Legend and Label Styling - Perfectly Centered 50/50 with Compact Height */
+/* Modern Legend and Label Styling - Inside wrapper, top left corner */
 main .form fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) legend {
     font-weight: var(--form-fieldset-legend-font-weight);
     font-size: var(--form-fieldset-legend-font-size);
-    color: var(--form-fieldset-legend-color);
+    color: #000;
     width: auto;
     padding: 0.5rem 1.5rem;
     margin-bottom: 0;
     line-height: 1.1;
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--form-input-border-radius);
+    background-color: #ffc51d;
+    border: none;
+    border-radius: var(--form-input-border-radius) 0 0 0;
     position: absolute;
     top: 0;
-    left: 1.5rem;
+    left: 0;
     z-index: 1;
     box-shadow: var(--form-shadow-sm);
-    transform: translateY(-50%);
 }
 
 /* Enhanced Label Styling */
@@ -414,6 +415,7 @@ main .form form fieldset.radio-group-wrapper {
     margin-left: 0;
     background-color: var(--background-color-secondary);
     padding: 1.25rem;
+    padding-top: 3.15rem;
     border-radius: var(--form-input-border-radius);
     border: 1px solid var(--border-color);
 }
@@ -422,17 +424,16 @@ main .form form fieldset.checkbox-group-wrapper > legend,
 main .form form fieldset.radio-group-wrapper > legend {
     padding: 0.5rem 1.5rem;
     margin-bottom: 0;
-    color: var(--text-color-primary);
+    color: #000;
     font-weight: 600;
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--form-input-border-radius);
+    background-color: #ffc51d;
+    border: none;
+    border-radius: var(--form-input-border-radius) 0 0 0;
     position: absolute;
     top: 0;
-    left: 1.5rem;
+    left: 0;
     z-index: 1;
     box-shadow: var(--form-shadow-sm);
-    transform: translateY(-50%);
     line-height: 1.1;
 }
 
@@ -1068,6 +1069,7 @@ main .form form .panel-wrapper {
     grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
     gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
     padding: 1.5rem;
+    padding-top: 3.15rem;
     background-color: var(--surface-color);
     border-radius: var(--form-input-border-radius);
     border: 1px solid var(--border-color);
@@ -1079,6 +1081,7 @@ main .form form .repeat-wrapper {
     grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
     gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
     padding: 1.5rem;
+    padding-top: 3.15rem;
     background-color: var(--background-color-secondary);
     border-radius: var(--form-input-border-radius);
     border: 1px solid var(--border-color);
