@@ -1,1 +1,74 @@
 /* embed-adaptive-form styles */
+
+/* Match adaptive form text styling to main site typography */
+
+/* Headings - match main site styles from styles.css */
+.embed-adaptive-form h1,
+.embed-adaptive-form h2,
+.embed-adaptive-form h3,
+.embed-adaptive-form h4,
+.embed-adaptive-form h5,
+.embed-adaptive-form h6 {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  line-height: 1.25;
+  scroll-margin: 40px;
+  color: var(--color-brand-700);
+}
+
+.embed-adaptive-form h1 {
+  font: var(--type-display-1-font);
+  letter-spacing: var(--type-display-1-letter-spacing);
+  margin-top: 0.2em;
+}
+
+.embed-adaptive-form h2 {
+  font: var(--type-display-2-font);
+  letter-spacing: var(--type-display-2-letter-spacing);
+}
+
+.embed-adaptive-form h3 {
+  font: var(--type-display-3-font);
+  letter-spacing: var(--type-display-3-letter-spacing);
+}
+
+.embed-adaptive-form h4 {
+  font: var(--type-headline-1-font);
+  letter-spacing: var(--type-headline-1-letter-spacing);
+}
+
+.embed-adaptive-form h5 {
+  font: var(--type-headline-2-strong-font);
+  letter-spacing: var(--type-headline-2-strong-letter-spacing);
+}
+
+.embed-adaptive-form h6 {
+  font: var(--type-headline-2-default-font);
+  letter-spacing: var(--type-headline-2-default-letter-spacing);
+}
+
+/* Paragraphs - match main site body text styling */
+.embed-adaptive-form p {
+  font: var(--type-body-1-default-font);
+  letter-spacing: var(--type-body-1-default-letter-spacing);
+  color: var(--color-brand-700);
+  margin-top: 1.5625em;
+  margin-bottom: 1.5625em;
+}
+
+/* Code and pre - match main site styling */
+.embed-adaptive-form code,
+.embed-adaptive-form pre {
+  font: var(--type-body-2-default-font);
+  letter-spacing: var(--type-body-2-default-letter-spacing);
+  font-family: var(--type-fixed-font-family);
+}
+
+.embed-adaptive-form pre {
+  overflow: scroll;
+  background-color: var(--color-neutral-300);
+  padding: 1em;
+  border-radius: 0.25em;
+  overflow-x: auto;
+  white-space: pre;
+}

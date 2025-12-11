@@ -1342,7 +1342,7 @@ main div.form-wrapper::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, rgb(235, 10, 30) 0%, rgb(200, 8, 25) 100%);
+    background: #ffc51d;
 }
 
 /* Enhanced Mobile Responsiveness */
@@ -1449,4 +1449,78 @@ main .form select:focus-visible,
 main .form button:focus-visible {
     outline: 2px solid rgb(235, 10, 30);
     outline-offset: 2px;
+}
+
+/* Text Component Styling - Match main site typography */
+
+/* Headings - match main site styles from styles.css */
+main .form h1,
+main .form h2,
+main .form h3,
+main .form h4,
+main .form h5,
+main .form h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.25em;
+    line-height: 1.25;
+    scroll-margin: 40px;
+    color: var(--color-brand-700);
+}
+
+main .form h1 {
+    font: var(--type-display-1-font);
+    letter-spacing: var(--type-display-1-letter-spacing);
+    margin-top: 0.2em;
+}
+
+main .form h2 {
+    font: var(--type-display-2-font);
+    letter-spacing: var(--type-display-2-letter-spacing);
+}
+
+main .form h3 {
+    font: var(--type-display-3-font);
+    letter-spacing: var(--type-display-3-letter-spacing);
+}
+
+main .form h4 {
+    font: var(--type-headline-1-font);
+    letter-spacing: var(--type-headline-1-letter-spacing);
+}
+
+main .form h5 {
+    font: var(--type-headline-2-strong-font);
+    letter-spacing: var(--type-headline-2-strong-letter-spacing);
+}
+
+main .form h6 {
+    font: var(--type-headline-2-default-font);
+    letter-spacing: var(--type-headline-2-default-letter-spacing);
+}
+
+/* Plain text paragraphs - match main site body text styling */
+main .form form .plain-text-wrapper p,
+main .form form .heading-wrapper p {
+    font: var(--type-body-1-default-font);
+    letter-spacing: var(--type-body-1-default-letter-spacing);
+    color: var(--color-brand-700);
+    margin-top: 1.5625em;
+    margin-bottom: 1.5625em;
+}
+
+/* Code and pre - match main site styling */
+main .form code,
+main .form pre {
+    font: var(--type-body-2-default-font);
+    letter-spacing: var(--type-body-2-default-letter-spacing);
+    font-family: var(--type-fixed-font-family);
+}
+
+main .form pre:not(.form pre) {
+    overflow: scroll;
+    background-color: var(--color-neutral-300);
+    padding: 1em;
+    border-radius: 0.25em;
+    overflow-x: auto;
+    white-space: pre;
 }
